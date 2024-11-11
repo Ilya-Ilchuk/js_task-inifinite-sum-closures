@@ -5,17 +5,14 @@
  */
 function makeInfinityAdder(x = 0) {
   let sum = x;
-  let isEmpty = false;
 
   const adder = (y) => {
-    if (isEmpty) {
-      sum = 0;
-    }
-
     if (y === undefined) {
-      isEmpty = true;
+      const result = sum;
 
-      return sum;
+      sum = 0;
+
+      return result;
     }
 
     sum += y;
